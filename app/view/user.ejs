@@ -1,0 +1,103 @@
+<%- include('partials/header') %>
+<body class="user-page">
+  <%- include('partials/nav') %>
+
+  <div class="content">
+    <p class="title">UTILISATEUR</p>
+  </div>
+  <div class="div-choice-button">
+    <button type="submit" class="choice-button" id="modify-button">Modifier</button>
+    <button type="submit" class="choice-button" id="add-button">Ajouter</button>
+  </div>
+
+  <!-- SELECT PERMETTANT DE CHOISIR UN USER DE LA BDD -->
+  <div class="select-container is-hidden" id="select-user">
+    <label for="choix" class="select-label">Choisir une option :</label>
+    <select name="choix" id="user-choice" class="select">
+      <option value="">-- Sélectionnez une option --</option>
+      <% for(const user of usersList) { %>
+      <option value="<%= user.id %>"><%= user.firstname %> <%= user.lastname %></option>
+      <% } %>
+    </select>
+  </div>
+
+
+  <!-- FORMULAIRE DE MOFICIATION UNE FOIS LE SELECT SELECTIONNE -->
+  <form class="user-form is-hidden" id="user-form-modify">
+    <div class="form-group">
+      <label for="nom" class="form-label">Nom :</label>
+      <input type="text"  name="lastname" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="prenom" class="form-label">Prénom :</label>
+      <input type="text"  name="firstname" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="niveau" class="form-label">Niveau :</label>
+      <input type="number"  name="level" class="form-input" min="1" max="100" required>
+    </div>
+    <div class="form-group">
+      <label for="wallet" class="form-label">Portefeuille :</label>
+      <input type="text" name="wallet" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="family" class="form-label">Famille :</label>
+      <input type="text"  name="family" class="form-input" value="" >
+      
+      <input type="hidden" id="family-id" name="family_id" value="">
+
+    </div>
+    </div>
+    <button type="submit" class="form-button-modify">Modifier</button>
+    <button type="action" class="form-button-cancel">Annuler</button>
+
+  </form>
+
+  <!-- FORMULAIRE D AJOUT  -->
+  <form class="user-form is-hidden" id="user-form-add">
+    <div class="form-group">
+      <label for="email" class="form-label">Email :</label>
+      <input type="email" id="email" name="email" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="password" class="form-label">Mot de passe :</label>
+      <input type="password" id="password" name="password" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="password" class="form-label">Confirmez le mot de passe :</label>
+      <input type="password" id="password-confirmation" name="confirmation" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="nom" class="form-label">Nom :</label>
+      <input type="text" id="nom" name="lastname" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="prenom" class="form-label">Prénom :</label>
+      <input type="text" id="prenom" name="firstname" class="form-input" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="niveau" class="form-label">Niveau :</label>
+      <input type="number" id="niveau" name="level" class="form-input" min="1" max="100" >
+    </div>
+    <div class="form-group">
+      <label for="wallet" class="form-label">Portefeuille :</label>
+      <input type="text" id="wallet" name="wallet" class="form-input" value="" >
+    </div>
+    <div class="form-group">
+      <label for="family" class="form-label">Famille :</label>
+      <select name="family_id" id="family-choice" class="select">
+        <option value="">-- Sélectionnez une option --</option>
+        <option value="null">-- Aucune --</option>
+
+        <% for(const family of familiesList) { %>
+        <option value="<%= family.id %>"><%= family.name %> </option>
+        <% } %>
+      </select>
+    </div>
+    </div>
+    <button type="submit" class="form-button-add">Ajoutez</button>
+    
+
+  </form>
+
+<%- include('partials/footer') %>

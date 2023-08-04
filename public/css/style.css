@@ -1,0 +1,689 @@
+/* Style de base pour la page */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+}
+
+.container {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	justify-content: center;
+}
+
+.is-hidden {
+	display: none;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	background-color: #EEE;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* *************************** CSS MENU NAV ********************************************* */
+/*  Tu peux la remettre comme avant si tu veux, j'ai juste essayé qqchose */
+/* nav {
+	background-color: #333;
+	color: #fff;
+	flex-basis: 20%;
+	position: sticky;
+	top: 0;
+} */
+
+nav {
+	background-color: #333;
+	color: #fff;
+	width: 20%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 23.5vh;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	padding: 10px;
+	border-bottom: 1px solid #666;
+}
+
+nav ul li:hover {
+	background-color: #666;
+	cursor: pointer;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.content {
+	background-color: #fff;
+	flex-basis: 80%;
+	padding: 20px;
+}
+/* *************************** CSS -> MODAL  ********************************************* */
+
+.modal {
+	/* display: none; */
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background-color: white;
+	margin: 10% auto;
+	padding: 30px;
+	border: 1px solid #ccc;
+	width: 80%;
+	max-width: 800px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h2 {
+	margin-top: 0;
+	font-size: 24px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form label {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	width: 100%;
+	font-size: 16px;
+}
+
+.modal-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.modal-buttons button {
+	padding: 10px 20px;
+	border-radius: 5px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.modal-buttons button[type="submit"] {
+	background-color: #0077ff;
+	color: white;
+}
+
+.modal-buttons button[type="button"] {
+	background-color: #eee;
+	color: #333;
+}
+
+.modal-buttons button:focus {
+	outline: none;
+}
+
+.modal-buttons button:active {
+	transform: translateY(1px);
+}
+
+  
+
+/* *************************** CSS -> USER  ********************************************* */
+
+/* Style du formulaire */
+.user-form {
+	width: 400px;
+	margin: 50px auto;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.form-input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.form-button-modify {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+
+.form-button-cancel {
+display: block;
+width: 100%;
+padding: 10px;
+background-color: tomato;
+color: #fff;
+font-weight: bold;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.div-choice-button {
+	display: flex;
+	gap: 30px;
+	text-align: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.choice-button {
+	display: block;
+	width: 20%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+}
+
+/* Style du select */
+.select-container {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.select-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+  /* *************************** CSS -> QUEST  ********************************************* */
+
+.quest-form-add {
+	width: 400px;
+	margin: 50px auto;
+}
+.quest-form-modify {
+	width: 400px;
+	margin: 50px auto;
+}
+
+
+/* *************************** CSS -> FAMILY  ********************************************* */
+
+
+.choice-button-family {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out;
+}
+
+.choice-button-family:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.2);
+	z-index: -1;
+	transition: transform 0.3s ease-in-out;
+}
+
+.choice-button-family:hover {
+	transform: translateY(-5px);
+}
+
+.choice-button-family:hover:before {
+	transform: translate(-50%, -50%) scale(15);
+}
+
+.family-title {
+	text-align: center;
+}
+
+
+.family-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.family-name {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	list-style-type: none;
+	margin-top: 5px;
+}
+
+.family-name li {
+	padding: 10px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.family-name li:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+	background-color: #D4D4D4;
+}
+
+.family-name li:nth-child(even) {
+	background-color: #E9EBEE;
+}
+
+.family-name li:nth-child(odd) {
+	background-color: #F5F7FA;
+}
+
+.family-block {
+	display: none;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 800px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.family-block:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.family-block-name {
+	font-size: 24px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.family-block h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.family-block p {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.family-block ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.family-block li {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.family-block li strong {
+	margin-right: 10px;
+}
+
+.family-members {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.family-members li {
+	margin: 5px 0;
+}
+
+.family-level {
+	font-style: italic;
+	margin: 10px 0;
+}
+
+.create-family {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.create-family form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+
+.form-label-family {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.form-input-family {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-button-family {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background-color: #1fb900e8;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-button-family:hover {
+	background-color: #247e00e3;
+	transform: scale(1.1);
+}
+
+.family-form-add {
+	width: 400px;
+}
+
+.form-create {
+	width: 400px;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+	/* animation */
+	animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.select-wrapper-delete {
+	position: relative;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.select-family-delete {
+	width: 300px;
+	padding: 10px;
+	font-size: 16px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.406 9.719l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	cursor: pointer;
+}
+
+.select-family-delete:focus {
+	outline: none;
+	border-color: #007bff;
+}
+
+.delete-family-select-btn {
+	position: relative;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background-color: #dc3545;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 20px;
+	animation: zoom-in 1s ease-out;
+}
+
+@keyframes zoom-in {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.delete-family-select-btn:hover {
+	background-color: #c82333;
+}
+
+.create-family-btn {
+	background-color: green;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.pagination button {
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #ccc;
+	padding: 8px 16px;
+	margin: 0 4px;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.pagination button:hover {
+	background-color: #ccc;
+	color: #fff;
+}
+
+  /* *************************** CSS -> SHOP  ********************************************* */
+  
+.list {
+	width: 65%;
+	background-color: #fff;
+	border: 1px solid #CCC;
+	margin-top: 38%;
+}
+
+.item-table {
+	width:100%;
+	border-collapse: collapse;
+}
+
+
+td, th {
+	flex: 2 1  30%;
+	
+} 
+
+.item {
+	display: flex;
+}
+
+.title-row {
+	display: flex;
+	justify-content: space-around;
+    background-color: #f2f2f2;
+	border-bottom: 3px solid #ddd;
+	
+}
+
+.title-cell {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: bold;
+}
+.list .item {
+	padding: 15px;
+	border-bottom: 1px solid #CCC;
+	cursor: pointer;
+}
+
+.list .item:last-of-type {
+	border-bottom:none;
+}
+
+.list .item:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.pagenumbers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.pagenumbers button {
+	width: 50px;
+	height: 50px;
+
+	appearance: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+	background-color: #4ae;
+
+	margin: 5px;
+	transition: 0.4s;
+
+	color: #FFF;
+	font-size: 18px;
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pagenumbers button:hover {
+	background-color: #44EEAA;
+}
+
+.pagenumbers button.active {
+	background-color: #44EEAA;
+	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2)
+}
+

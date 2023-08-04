@@ -1,0 +1,60 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<div class="content">
+    <h1 class="family-title">Famille</h1>
+</div>
+<div class="div-choice-button">
+    <button class="choice-button-family" id="show-family-info-btn">Infos des familles</button>
+    <button class="choice-button-family" id="create-button">Créer une famille</button>
+    <button class="choice-button-family" id="delete-button">Supprimer une famille</button>
+</div>
+
+<!-- ---------- INFOS DES FAMILLES ---------- -->
+
+
+<div class="family-info">
+    <h2 class="family-name"></h2>
+
+        <div class="family-block">
+            <h2 class="family-block-name"></h2>
+            <p class="family-level"></p>
+            <ul class="family-members"></ul>
+        </div>
+
+    <div class="pagination"></div>
+</div>
+
+<!-- ---------- CREER UNE FAMILLE ---------- -->
+<div class="create-family">
+    <div class="form-create">
+        <form class="family-form-add">
+            <div class="form-group">
+                <label for="family-name" class="form-label">Nom de la famille</label>
+                <input class="form-input-family" type="text" id="family-name" name="family-name">
+            </div>
+            <div class="form-group">
+                <label for="family-level" class="form-label-family">Niveau de la famille</label>
+                <input class="form-input" type="number" id="family-level" name="family-level" min="1" max="20" value="1">
+            </div>
+            <button type="submit" class="form-button-family">Créer la famille</button>
+        </form>
+    </div>
+</div>
+
+<!-- ---------- SUPPRIMER UNE FAMILLE ---------- -->
+
+<div class="select-wrapper-delete">
+    <form method="POST">
+        <select name="family-select" id="family-select" class="select-family-delete">
+            <option value="" disabled selected hidden>-- Sélectionnez une famille --</option>
+            <% families.forEach(family => { %>
+            <option value="<%= family.id %>"><%= family.name %></option>
+            <% }); %>
+        </select>
+    </form>
+    <button type="button" class="delete-family-select-btn">Supprimer la famille</button>
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,42 @@
+{
+  "name": "projet-09-keep-score-and-have-fun-back",
+  "version": "1.0.0",
+  "description": "[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/for-sharks.svg)](http://forthebadge.com)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "migrate": "pg-migrate up -m ./migrations/deploy --config ./migrate-config.js -u \"$DATABASE_URL\"",
+    "seed": "bash ./migrations/5.seeding.sh",
+    "migrate-seed": "npm run migrate && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Ohm/projet-09-keep-score-and-have-fun-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Ohm/projet-09-keep-score-and-have-fun-back/issues"
+  },
+  "homepage": "https://github.com/O-clock-Ohm/projet-09-keep-score-and-have-fun-back#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
+    "jwt-redis": "^7.0.3",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.10.0",
+    "pg-migrate": "^2.0.1",
+    "sequelize": "^6.31.0",
+    "sequelize-cli": "^6.6.0"
+  }
+}

@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+<body class="quest-page">
+  <%- include('partials/nav') %>
+
+  <div class="content">
+      <p class="title">QUETES</p>
+  </div>
+  <div class="div-choice-button">
+      <button type="submit" class="choice-button" id="modify-button">Modifier</button>
+      <button type="submit" class="choice-button" id="add-button">Ajouter</button>
+  </div>
+
+
+    <!-- SELECT PERMETTANT DE CHOISIR ET MODIFIER UNE QUETE DE LA BDD -->
+  <div class="select-container is-hidden" id="select-quest">
+      <label for="choix" class="select-label">Choisir une option :</label>
+      <select name="choix" id="quest-choice" class="select">
+        <option value="">-- Sélectionnez une option --</option>
+        <% for(const quest of quests) { %>
+        <option value="<%= quest.id %>"><%= quest.id %> : <%= quest.description %> -> <%= quest.difficulty %></option>
+        <% } %>
+      </select>
+  </div>
+
+
+  <!-- FORMULAIRE D AJOUT DE QUETE -->
+  <form class="quest-form-add is-hidden" id="quest-form-add" >
+      <div class="form-group">
+        <label for="description" class="form-label">Description :</label>
+        <input type="text" id="description" name="description" class="form-input" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_exp" class="form-label">Récompense d'expérience :</label>
+        <input type="number" id="reward_exp" name="reward_exp" class="form-input" min="1" max="1000" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_coin" class="form-label">Récompense en or :</label>
+        <input type="number" id="reward_coin" name="reward_coin" class="form-input" min="1" max="1000" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_item" class="form-label">Récompense collection :</label>
+        <select name="reward_item" id="collection-choice" class="select">
+          <option value="">-- Sélectionnez une option --</option>
+          <% for(const collection of collections) { %>
+          <option value="<%= collection.id %>"><%= collection.description %> </option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="difficulty" class="form-label">Difficulté :</label>
+        <input type="number" id="difficulty" name="difficulty" class="form-input" min="1" max="3" required>
+      </div>
+      </div>
+      <button type="submit" class="form-button" id="form-add-button">Envoyer</button>
+  </form>
+
+
+
+  <!-- FORMULAIRE DE MODIFICATION DE QUETE -->
+  <form class="quest-form-add is-hidden" id="quest-form-modify">
+      <div class="form-group">
+        <label for="description" class="form-label">Description :</label>
+        <input type="text" id="description" name="description" class="form-input" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_exp" class="form-label">Récompense d'expérience :</label>
+        <input type="text" id="reward_exp" name="reward_exp" class="form-input" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_coin" class="form-label">Récompense en or :</label>
+        <input type="text" id="reward_coin" name="reward_coin" class="form-input" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="reward_item" class="form-label">Récompense collection :</label>
+        <input type="text" id="reward_item" name="reward_item" class="form-input" value="" >
+      </div>
+      <div class="form-group">
+        <label for="difficulty" class="form-label">Difficulté :</label>
+        <input type="number" id="difficulty" name="difficulty" class="form-input" min="1" max="3" required>
+      </div>
+      </div>
+      <button type="submit" class="form-button-modify form-button-modify-quest">Modifier</button>
+    <button type="action" class="form-button-cancel form-button-cancel-quest">Annuler</button>
+  </form>
+    
+
+
+
+<%- include('partials/footer') %>
